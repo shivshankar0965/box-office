@@ -1,13 +1,19 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Navs from './components/Navs';
+import Home from './pages/Home';
+import Starred from './pages/Starred';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<div>This is home page.</div>} />
-      <Route path="/starred" element={<div>This is starred page.</div>} />
-      <Route path="/*" element={<div>This is 404 page.</div>} />
-    </Routes>
+    <div>
+      <Navs />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/starred" element={<Starred />} />
+        <Route path="/*" element={<div>Not Found</div>} />
+      </Routes>
+    </div>
   );
 }
 
